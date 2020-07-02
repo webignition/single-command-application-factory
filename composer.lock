@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "73663d38caf31f6b7456f10678d0d96f",
+    "content-hash": "f65e891d98285e8552c6ad833f7bca6a",
     "packages": [
         {
             "name": "psr/container",
@@ -5715,6 +5715,47 @@
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
             "time": "2019-06-13T22:48:21+00:00"
+        },
+        {
+            "name": "webignition/object-reflector",
+            "version": "0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webignition/object-reflector.git",
+                "reference": "31c0d4bd821f98e9ebae0ce14f6aac3a23da551e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webignition/object-reflector/zipball/31c0d4bd821f98e9ebae0ce14f6aac3a23da551e",
+                "reference": "31c0d4bd821f98e9ebae0ce14f6aac3a23da551e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.28",
+                "phpunit/phpunit": "^9.2",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "webignition\\ObjectReflector\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Cram",
+                    "email": "webignition@gmail.com"
+                }
+            ],
+            "homepage": "https://github.com/webignition/object-reflector",
+            "time": "2020-06-24T17:20:47+00:00"
         },
         {
             "name": "webmozart/assert",
