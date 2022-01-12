@@ -8,11 +8,12 @@ on:
 
 jobs:
   phpstan:
-    name: PHPStan - PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }}
+    name: PHPStan - PHP ${{ matrix.php }}
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
-        php: ['8.0']
+        php: ['7.4', '8.0', '8.1']
+
     runs-on: ${{ matrix.operating-system }}
 
     steps:
@@ -28,7 +29,6 @@ jobs:
         uses: php-actions/composer@v6
         with:
           php_version: ${{ matrix.php }}
-          args: --ignore-platform-reqs --quiet
 
       - name: PHPStan
         run: composer static-analysis
