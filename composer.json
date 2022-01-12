@@ -22,10 +22,11 @@
         }
     },
     "scripts": {
-        "cs-ecs": "./vendor/bin/ecs check src tests --ansi --no-progress-bar --config ecs.php",
+        "cs-fixer-dry-run": "docker run --rm -i -w=/app -v ${PWD}:/app oskarstark/php-cs-fixer-ga:latest --allow-risky=yes --dry-run --verbose --show-progress none",
+        "cs-fixer-fix": "docker run --rm -i -w=/app -v ${PWD}:/app oskarstark/php-cs-fixer-ga:latest --allow-risky=yes --diff",
         "cs-phpcs": "./vendor/bin/phpcs",
         "cs": [
-            "@cs-ecs",
+            "@cs-fixer-dry-run",
             "@cs-phpcs"
         ],
         "cs-fix": [
@@ -48,10 +49,12 @@
         "phpstan/phpstan": "^0.12.77",
         "phpunit/phpunit": "^9.5",
         "squizlabs/php_codesniffer": "^3.5",
-        "symplify/easy-coding-standard": "^9.1",
         "webignition/object-reflector": "^1.0"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
     }
 }
