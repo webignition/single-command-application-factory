@@ -21,7 +21,8 @@ class Factory
             ->setVersion($version)
             ->setCode(function (InputInterface $input, OutputInterface $output) use ($command) {
                 return $command->run($input, $output);
-            });
+            })
+        ;
 
         return $application;
     }
