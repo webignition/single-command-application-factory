@@ -19,11 +19,11 @@ jobs:
         run: composer cs-fixer-dry-run
 
   phpcs:
-    name: PHPCS - PHP ${{ matrix.php }} ${{ matrix.operating-system }}
+    name: PHPCS - PHP ${{ matrix.php }}
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
-        php: ['7.4', '8.0']
+        php: ['7.4', '8.0', '8.1']
         symfony: ['5.4.*', '6.0.*']
         exclude:
           - php: '7.4'
