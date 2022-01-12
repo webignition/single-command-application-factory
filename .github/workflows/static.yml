@@ -8,11 +8,11 @@ on:
 
 jobs:
   phpstan:
-    name: PHPStan - PHP ${{ matrix.php }} ${{ matrix.operating-system }}
+    name: PHPStan - PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }}
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
-        php: ['7.4', '8']
+        php: ['8.0']
     runs-on: ${{ matrix.operating-system }}
 
     steps:
