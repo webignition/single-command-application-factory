@@ -51,7 +51,7 @@ jobs:
         with:
           command: require
           php_version: ${{ matrix.php }}
-          args: symfony/console ${{ matrix.symfony }}
+          args: symfony/console ${{ matrix.symfony }} -W
 
       - name: Run PHPCS
         run: composer cs-phpcs
