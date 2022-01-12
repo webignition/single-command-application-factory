@@ -27,7 +27,7 @@ class FactoryTest extends TestCase
         self::assertSame($command->getDefinition(), $application->getDefinition());
 
         $code = ObjectReflector::getProperty($application, 'code', Command::class);
-
+        \assert($code instanceof Closure);
         self::assertInstanceOf(Closure::class, $code);
 
         $codeReflectionFunction = new ReflectionFunction($code);
