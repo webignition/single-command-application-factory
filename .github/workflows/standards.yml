@@ -44,7 +44,6 @@ jobs:
         uses: php-actions/composer@v6
         with:
           php_version: ${{ matrix.php }}
-          args: --ignore-platform-reqs --quiet
 
       - name: Install specific symfony/console version
         uses: php-actions/composer@v6
