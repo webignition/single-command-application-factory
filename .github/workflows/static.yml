@@ -28,7 +28,7 @@ jobs:
         uses: php-actions/composer@v6
         with:
           php_version: ${{ matrix.php }}
-          args: --ignore-platform-reqs --quiet
+          args: --ignore-platform-reqs
 
       - name: PHPStan
         run: composer static-analysis
