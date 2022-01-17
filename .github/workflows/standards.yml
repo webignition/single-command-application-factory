@@ -23,11 +23,7 @@ jobs:
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
-        php: ['7.4', '8.0', '8.1']
-        symfony: ['5.4.*', '6.0.*']
-        exclude:
-          - php: '7.4'
-            symfony: '6.0.*'
+        php: ['8.0', '8.1']
 
     runs-on: ${{ matrix.operating-system }}
 
@@ -50,7 +46,6 @@ jobs:
         with:
           command: require
           php_version: ${{ matrix.php }}
-          args: symfony/console ${{ matrix.symfony }} -W
 
       - name: Run PHPCS
         run: composer cs-phpcs
