@@ -12,11 +12,8 @@ jobs:
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
-        php: ['7.4', '8.0', '8.1']
+        php: ['8.0', '8.1']
         symfony: ['5.4.*', '6.0.*']
-        exclude:
-          - php: '7.4'
-            symfony: '6.0.*'
 
     runs-on: ${{ matrix.operating-system }}
 
@@ -39,7 +36,6 @@ jobs:
         with:
           command: require
           php_version: ${{ matrix.php }}
-          args: symfony/console ${{ matrix.symfony }} -W
 
       - name: Run PHPUnit unit tests
         run: composer test
